@@ -18,6 +18,11 @@ class _HomePageState extends State<HomePage> {
 
     WeatherModel? weather;
 
+    navigateToHomePage()async{
+      Navigator.pushNamed(context, '/weather');
+    }
+
+
     void fetchWeather() async {
       const city = "Chicago";
       final weatherData = await weatherService.getWeather(city);
@@ -31,9 +36,6 @@ class _HomePageState extends State<HomePage> {
       });
       print(weather);
     }
-
-
-
     String cityName = "Chicago"; //city name
     int currTemp = weather==null? 3 : weather!.temperature; // current temperature
     int maxTemp = 30; // today max temperature
@@ -79,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                             ),
-                            IconButton(onPressed:fetchWeather , icon: FaIcon(
+                            IconButton(onPressed:navigateToHomePage , icon: FaIcon(
                               FontAwesomeIcons.eye,
                               color: isDarkMode ? Colors.white : Colors.black,
                             ),)

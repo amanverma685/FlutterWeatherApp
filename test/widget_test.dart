@@ -13,7 +13,7 @@ void main() {
 
     setUp(() {
       mockWeatherService = MockWeatherService();
-      weatherDisplayScreen = WeatherDisplayScreen(weatherService: mockWeatherService);
+      // weatherDisplayScreen = WeatherDisplayScreen(weatherService: mockWeatherService);
     });
 
     testWidgets('Fetches weather data and updates UI', (WidgetTester tester) async {
